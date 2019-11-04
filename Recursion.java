@@ -17,11 +17,12 @@ public class Recursion
     public static void main()
     {
         Scanner keyboard = new Scanner(System.in);
+        Keyinput kInput = new Keyinput();
         String input, convert;
         int through = 0;
         int is = 0;
         
-        System.out.println("Input a string");
+        kInput.printPrompt("Input a string");
         input = keyboard.nextLine();
         convert = input.toLowerCase();
         convert = convert.replaceAll("[\\W]", "");
@@ -30,11 +31,11 @@ public class Recursion
         
         if(pali == true)
         {
-            System.out.println("That is a palindrome");
+            kInput.printPrompt("That is a palindrome");
         }
         else
         {
-            System.out.println("That is not a palindrome");
+            kInput.printPrompt("That is not a palindrome");
         }
     }
     
@@ -52,7 +53,7 @@ public class Recursion
             }
         }
         
-        if(is == 1)
+        if(is == word.length())
         {
             return true;
         }

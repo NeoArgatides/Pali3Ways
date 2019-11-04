@@ -17,30 +17,31 @@ public class Palindrome
         errorCode = 0;
     }
 
-    public void main()
+    public static void main()
     {
         Scanner keyboard = new Scanner (System.in);
         System.out.print('\u000C');
         Recursion again = new Recursion();
         ForLoop loop = new ForLoop();
         Build back = new Build();
+        Keyinput input = new Keyinput();
         
         int exit = 1;
         
         while(exit != 0)
         {
-           System.out.println("---------------------------------");
-           System.out.println("Type 0 to quit");
-           System.out.println("Type 1 for Recursion");
-           System.out.println("Type 2 for Forloop");
-           System.out.println("Type 3 for Build");
-           System.out.println("---------------------------------");
+           input.printPrompt("---------------------------------");
+           input.printPrompt("Type 0 to quit");
+           input.printPrompt("Type 1 for Recursion");
+           input.printPrompt("Type 2 for Forloop");
+           input.printPrompt("Type 3 for Build");
+           input.printPrompt("---------------------------------");
            exit = keyboard.nextInt();
            
            switch(exit) //choose
            {
               case 0:
-                System.out.println("Goodbye!");
+                input.printPrompt("Goodbye!");
                 break;
               case 1:
                again.main();

@@ -17,13 +17,14 @@ public class ForLoop
     public static void main()
     {
          Scanner keyboard = new Scanner(System.in);  
+         Keyinput kInput = new Keyinput();
          String word, convert;  
          int i = 0;
          int x = 0;
          int length;
          char [] forward, backward;
             
-         System.out.println("Input a string");
+         kInput.printPrompt("Input a string");
          word = keyboard.nextLine();
          convert = word.toLowerCase();
          convert = convert.replaceAll("[\\W]", "");
@@ -42,11 +43,11 @@ public class ForLoop
              
          if(convert.equals(reverse)) 
          {  
-             System.out.println("That is a palindrome");
+             kInput.printPrompt("That is a palindrome");
          } 
          else 
          {
-             System.out.println("That is not a palindrome");
+             kInput.printPrompt("That is not a palindrome");
          }
      } 
 }

@@ -19,6 +19,7 @@ public class Build
     {
         StringBuilder build;
         Scanner keyboard = new Scanner (System.in);
+        Keyinput kInput = new Keyinput();
         System.out.print('\u000C');
         String input = "";
         String convert = "";
@@ -26,8 +27,8 @@ public class Build
         int length = 0;
         while(!convert.equals("q")) //repeat until string is Q or q
         {
-            System.out.println("Input a string (type Q to exit): ");
-            input = keyboard.nextLine();
+            kInput.printPrompt("Input a string (type Q to exit): ");
+            input = kInput.inString();
             convert = input;
             convert = input.toLowerCase();
             convert = convert.replaceAll("[\\W]", "");
@@ -42,17 +43,17 @@ public class Build
                     
                     if(convert.equals(backwards)) //check if forward is same as backwards
                     {
-                        System.out.println("\"" + input + "\" is a palindrome");
+                        kInput.printPrompt("\"" + input + "\" is a palindrome");
                     }
                     else
                     {
-                        System.out.println("\"" + input + "\" is not a palindrome");
+                        kInput.printPrompt("\"" + input + "\" is not a palindrome");
                     }
                 }
             }
             else if(!convert.equals("q"))
             {
-                System.out.println("String is too short");
+                kInput.printPrompt("String is too short");
             }
         }
     }
