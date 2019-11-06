@@ -7,6 +7,8 @@ public class Recursion
 {
     // instance variables - replace the example below with your own
     private int errorCode;
+    public static int through;
+    public static int is;
 
     public Recursion()
     {
@@ -19,15 +21,15 @@ public class Recursion
         Scanner keyboard = new Scanner(System.in);
         Keyinput kInput = new Keyinput();
         String input, convert;
-        int through = 0;
-        int is = 0;
+        through = 0;
+        is = 0;
         
         kInput.printPrompt("Input a string");
         input = keyboard.nextLine();
         convert = input.toLowerCase();
         convert = convert.replaceAll("[\\W]", "");
             
-        boolean pali = check(convert, through, is);
+        boolean pali = check(convert);
         
         if(pali == true)
         {
@@ -40,7 +42,7 @@ public class Recursion
     }
     
         
-    public static boolean check(String word, int through, int is)
+    public static boolean check(String word)
     {
         if(through <= (word.length() - 1))
         {
@@ -49,7 +51,7 @@ public class Recursion
                 through++;
                 is++;
                 
-                check(word, through, is);
+                check(word);
             }
         }
         
